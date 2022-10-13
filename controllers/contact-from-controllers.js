@@ -21,7 +21,7 @@ const createContactForm = async(req,res,next)=>{
     const newForm = new Form({
         name,
         email,
-        subject,
+        // subject,
         text,
         date: new Date()
     })
@@ -36,7 +36,8 @@ const createContactForm = async(req,res,next)=>{
         return next(error);
       }
 
-      let formData = `<h2>Email from: ${name}, email adress: ${email}, titled: ${subject}, content: ${text} </h2>`;
+      // let formData = `<h2>Email from: ${name}, email adress: ${email}, titled: ${subject}, content: ${text} </h2>`;
+      let formData = `<h2>Email from: ${name}, email adress: ${email}, content: ${text} </h2>`;
 
     
       const transporter = nodemailer.createTransport(

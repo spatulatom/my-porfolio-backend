@@ -14,9 +14,9 @@ router.post(
       check('email')
         .not()
         .isEmpty(),
-        check('subject')
-        .not()
-        .isEmpty(),
+        // check('subject')
+        // .not()
+        // .isEmpty(),
         check('text')
         .not()
         .isEmpty()
