@@ -53,7 +53,7 @@ const createContactForm = async(req,res,next)=>{
       try{
         await transporter.sendMail({
           to: 'elkom93@gmail.com',
-          from: 'spatulatom@gmail.com',
+          from: 'elkom9393@gmail.com',
           subject: 'Contact Form Data',
           html: formData
         });
@@ -68,9 +68,9 @@ const createContactForm = async(req,res,next)=>{
       try{
         await transporter.sendMail({
           to: email,
-          from: 'spatulatom@gmail.com',
+          from: 'elkom9393@gmail.com',
           subject: 'Thank you for contacting me through a Contact Form on my website',
-          html: '<h2>Appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> Tomasz S.</h2>'
+          html: '<h2>I appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> Tomasz S.</h2>'
         });
       }catch(err){
         const error = new HttpError(
