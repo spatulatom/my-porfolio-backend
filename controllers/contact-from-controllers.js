@@ -52,7 +52,7 @@ const createContactForm = async(req,res,next)=>{
 
       try{
         await transporter.sendMail({
-          to: 'elkom93@gmail.com',
+          to: 'elkom9393@gmail.com',
           from: 'elkom9393@gmail.com',
           subject: 'Contact Form Data',
           html: formData
