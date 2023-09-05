@@ -63,7 +63,7 @@ const createContactForm = async (req, res, next) => {
       from: 'tom.sypula@gmail.com',
       subject:
         'Thank you for contacting me through a Contact Form on my website',
-      html: '<h2>I appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> TS</h2>',
+      html: '<h2>I appreciate you taking your time and sending me an email through a Contact Form on my website https://projects-online.vercel.app/. I will reply to you shortly. <br> Kind regards,<br> TS</h2>',
     });
   } catch (err) {
     const error = new HttpError('Sending email failed, please try again!', 500);
