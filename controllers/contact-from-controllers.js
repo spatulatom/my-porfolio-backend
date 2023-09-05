@@ -48,8 +48,8 @@ const createContactForm = async (req, res, next) => {
 
   try {
     await transporter.sendMail({
-      to: 'elkom9393@gmail.com',
-      from: 'elkom9393@gmail.com',
+      to: 'tom.sypula@gmail.com',
+      from: email,
       subject: 'Portfolio Contact Form Data',
       html: formData,
     });
@@ -60,7 +60,7 @@ const createContactForm = async (req, res, next) => {
   try {
     await transporter.sendMail({
       to: email,
-      from: 'elkom9393@gmail.com',
+      from: 'tom.sypula@gmail.com',
       subject:
         'Thank you for contacting me through a Contact Form on my website',
       html: '<h2>I appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> Tomasz S.</h2>',
