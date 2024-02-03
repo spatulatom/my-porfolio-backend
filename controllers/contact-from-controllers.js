@@ -8,13 +8,14 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 const createContactForm = async (req, res, next) => {
-  // const errors = validationResult(req);
-  // if (!errors.isEmpty()) {
-  //   return next(
-  //     new HttpError('Invalid inputs passed, please check your data!', 422)
-  //   );
-  // }
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next(
+      new HttpError('Invalid inputs passed, please check your data!', 422)
+    );
+  }
   const { name, email, subject, text } = req.body;
+  console.log('name', name)
 
   const newForm = new Form({
     name,
@@ -48,8 +49,8 @@ const createContactForm = async (req, res, next) => {
 
   try {
     await transporter.sendMail({
-      to: 'tom.sypula@gmail.com',
-      from: 'tom.sypula@gmail.com',
+      to: 'spatulatom@gmail.com',
+      from: 'spatulatom@gmail.com',
       subject: 'Portfolio Contact Form Data',
       html: formData,
     });
@@ -60,7 +61,7 @@ const createContactForm = async (req, res, next) => {
   try {
     await transporter.sendMail({
       to: email,
-      from: 'tom.sypula@gmail.com',
+      from: 'spatulatom@gmail.com',
       subject:
         'Thank you for contacting me through a Contact Form on my website',
       html: '<h2>I appreciate you taking your time and sending me an email through a Contact Form on my website https://projects-online.vercel.app/. I will reply to you shortly. <br> Kind regards,<br> TS</h2>',
