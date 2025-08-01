@@ -50,7 +50,7 @@ const createContactForm = async (req, res, next) => {
   try {
     await sgMail.send(adminMessage);
   } catch (err) {
-    const error = new HttpError('SendGrid\'s free mail sending service is officially over. As of May 27, 2025, Twilio SendGrid began retiring its Free Email API', 500);
+    const error = new HttpError('SendGrid\'s free mail sending service is officially over. As of May 27, 2025, Twilio SendGrid began retiring its Free Email API', 410);
     return next(error);
   }
 
