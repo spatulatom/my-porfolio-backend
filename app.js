@@ -24,12 +24,18 @@ app.use((req, res, next) => {
   next();
 });
 
+// Add this before other routes
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
   app.use('/contact-form',contactRoutes);
 
 
   app.use((req, res, next) => {
     const error = new HttpError('Could not find this route.', 404);
     throw error;
+
   });
 
   app.use((error, req, res, next) => {
@@ -40,7 +46,7 @@ app.use((req, res, next) => {
     res.status(error.code || 500);
     res.json({ message: error.message || 'An unknown error occurred!' });
   });
-
+console.log(process.env.PORT, 'Juser' );
   
   mongoose
   .connect(
